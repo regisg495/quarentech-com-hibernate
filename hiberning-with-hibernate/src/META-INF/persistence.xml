@@ -1,0 +1,41 @@
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="hibernate">
+     <description>
+		Hibernate
+        </description>
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>jpa.ebay.modelo.Usuario</class>
+        <class>jpa.ebay.modelo.Produto</class>
+        <class>jpa.ebay.modelo.Publicacao</class>
+        <class>jpa.ebay.modelo.Compra</class>
+        <class>jpa.ebay.persistencia.JPAUtil</class>
+        <class>jpa.ebay.persistencia.UsuarioDAO</class>    
+    	<class>jpa.ebay.persistencia.CompraDAO</class>
+    	<class>jpa.ebay.persistencia.PublicacaoDAO</class>
+    	<class>jpa.ebay.persistencia.ProdutoDAO</class>
+    	<class>jpa.ebay.modelo.ItemVenda</class>
+    	<class>jpa.ebay.persistencia.ItemVenda</class>
+    	
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/ebay" /> <!-- BD Name -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="id41269" /> <!-- DB Password -->
+
+		    <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
+            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+            
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
